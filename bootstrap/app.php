@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 引入 helpers.php 文件
+ */
+require __DIR__.'/helpers.php';
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
