@@ -140,13 +140,11 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = '838233071@qq.com';
-        $name = 'gakkispy';
         $to = $user->email;
         $subject =  '你的账号未激活，请检查邮箱中的注册邮件进行激活。';
 
-        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
-            $message->from($from, $name)->to($to)->subject($subject);
+        Mail::send($view, $data, function ($message) use ($to, $subject) {
+            $message->to($to)->subject($subject);
         });
     }
 
